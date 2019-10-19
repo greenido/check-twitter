@@ -1,0 +1,2701 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>sqlite3 stuff</title>
+    <meta name="description" content="Twitter Stats with some nice hacks" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        🎬 Sqlite 3 Stuff / hacks / tips 🚦
+      </h1>
+    </header>
+
+    <main>
+      <div class="entry-content">
+        <p>
+          <strong>SQLite cheat sheet</strong>&nbsp;lists the most common SQLite
+          statements that help you work with SQLite more quickly and
+          effectively.
+        </p>
+        <h2>Managing databases</h2>
+        <p>Attach another database to the current database connection:</p>
+        <div
+          id="crayon-5daa49f56051f695608450"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+ATTACH DATABASE file_name AS database_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56051f695608450-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56051f695608450-1"
+                      >
+                        <span class="crayon-i">ATTACH</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">DATABASE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">file_name</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">AS</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">database_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Optimize the database:</p>
+        <div
+          id="crayon-5daa49f560528720674412"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+VACUUM</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560528720674412-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560528720674412-1"
+                      >
+                        <span class="crayon-i">VACUUM</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <h2>Managing Tables</h2>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-create-table/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Create a new table:</a
+          >
+        </p>
+        <div
+          id="crayon-5daa49f56052a860002898"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+CREATE TABLE [IF NOT EXISTS] table(
+   primary_key INTEGER PRIMARY KEY,
+   column_name type NOT NULL,
+   column_name type NULL,
+   ...
+);</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-4"
+                        style="height: 18px;"
+                      >
+                        4
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-5"
+                        style="height: 18px;"
+                      >
+                        5
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052a860002898-6"
+                        style="height: 18px;"
+                      >
+                        6
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-1"
+                      >
+                        <span class="crayon-k">CREATE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TABLE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">[</span
+                        ><span class="crayon-k">IF</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">NOT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">EXISTS</span
+                        ><span class="crayon-sy">]</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span
+                        ><span class="crayon-sy">(</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-2"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp; </span
+                        ><span class="crayon-i">primary_key</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INTEGER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">PRIMARY</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">KEY</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-3"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp; </span
+                        ><span class="crayon-i">column_name</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">type</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">NOT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">NULL</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-4"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp; </span
+                        ><span class="crayon-i">column_name</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">type</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">NULL</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-5"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp; </span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052a860002898-6"
+                      >
+                        <span class="crayon-sy">)</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Rename a table:</p>
+        <div
+          id="crayon-5daa49f56052c942578195"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+ALTER TABLE table_name RENAME TO new_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052c942578195-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052c942578195-1"
+                      >
+                        <span class="crayon-k">ALTER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TABLE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">RENAME</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TO</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">new_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Add a new column to a table:</p>
+        <div
+          id="crayon-5daa49f56052e573683278"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+ALTER TABLE table ADD COLUMN column_definition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56052e573683278-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56052e573683278-1"
+                      >
+                        <span class="crayon-k">ALTER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TABLE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ADD</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">COLUMN</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">column_definition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Drop an existing column in a table:</p>
+        <div
+          id="crayon-5daa49f560530066040197"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+ALTER TABLE table DROP COLUMN column_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560530066040197-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560530066040197-1"
+                      >
+                        <span class="crayon-k">ALTER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TABLE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">DROP</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">COLUMN</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">column_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Drop a table and its data:</p>
+        <div
+          id="crayon-5daa49f560531638474290"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+DROP TABLE [IF EXISTS] table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560531638474290-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560531638474290-1"
+                      >
+                        <span class="crayon-k">DROP</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">TABLE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">[</span
+                        ><span class="crayon-k">IF</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">EXISTS</span
+                        ><span class="crayon-sy">]</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <h2>Managing indexes</h2>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-index/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Creating an index</a
+          >
+        </p>
+        <div
+          id="crayon-5daa49f560533206066289"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+CREATE [UNIQUE] INDEX index_name
+ON table_name (c1,c2,...)</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560533206066289-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560533206066289-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560533206066289-1"
+                      >
+                        <span class="crayon-k">CREATE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">[</span
+                        ><span class="crayon-k">UNIQUE</span
+                        ><span class="crayon-sy">]</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INDEX</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">index_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560533206066289-2"
+                      >
+                        <span class="crayon-k">ON</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-e">table_name </span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">c2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Delete an index:</p>
+        <div
+          id="crayon-5daa49f560534339267005"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+DROP INDEX index_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560534339267005-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560534339267005-1"
+                      >
+                        <span class="crayon-k">DROP</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INDEX</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">index_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Create an expression index:</p>
+        <div
+          id="crayon-5daa49f560536571179417"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+CREATE INDEX index_name ON table_name(expression);</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560536571179417-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560536571179417-1"
+                      >
+                        <span class="crayon-k">CREATE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INDEX</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">index_name</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ON</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-e">table_name</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">expression</span
+                        ><span class="crayon-sy">)</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <h2>Querying Data</h2>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-select/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Query all data</a
+          >
+          from a table
+        </p>
+        <div
+          id="crayon-5daa49f56053b952091872"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT * FROM table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56053b952091872-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56053b952091872-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Query data from the specified column of a table:</p>
+        <div
+          id="crayon-5daa49f56053d400893680"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT c1, c2
+FROM table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56053d400893680-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56053d400893680-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56053d400893680-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c2</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56053d400893680-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-select-distinct"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Query unique</a
+          >
+          rows
+        </p>
+        <div
+          id="crayon-5daa49f56053e195201471"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT DISTINCT (c1)
+FROM table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56053e195201471-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56053e195201471-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56053e195201471-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">DISTINCT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56053e195201471-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Query rows that match a condition using a
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-where/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WHERE clause</a
+          >.
+        </p>
+        <div
+          id="crayon-5daa49f560540906719668"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT *
+FROM table_name
+WHERE condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560540906719668-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560540906719668-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560540906719668-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560540906719668-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560540906719668-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560540906719668-3"
+                      >
+                        <span class="crayon-k">WHERE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Rename column in the query’s output:</p>
+        <div
+          id="crayon-5daa49f560541334133937"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT c1 AS new_name
+FROM table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560541334133937-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560541334133937-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560541334133937-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">AS</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">new_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560541334133937-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Query data from multiple tables using
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-inner-join/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >inner join</a
+          >,
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-left-join/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >left join</a
+          >
+        </p>
+        <div
+          id="crayon-5daa49f560543460472739"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT * 
+FROM table_name_1
+INNER JOIN table_name_2 ON condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560543460472739-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560543460472739-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560543460472739-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560543460472739-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-h"> </span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560543460472739-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name_1</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560543460472739-3"
+                      >
+                        <span class="crayon-k">INNER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">JOIN</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name_2</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ON</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <div
+          id="crayon-5daa49f560544525825366"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT * 
+FROM table_name_1
+LEFT JOIN table_name_2 ON condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560544525825366-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560544525825366-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560544525825366-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560544525825366-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-h"> </span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560544525825366-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name_1</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560544525825366-3"
+                      >
+                        <span class="crayon-k">LEFT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">JOIN</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name_2</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ON</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-count-function/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Count</a
+          >
+          rows returned by a query:
+        </p>
+        <div
+          id="crayon-5daa49f560546124899874"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT COUNT (*)
+FROM table_name;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560546124899874-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560546124899874-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560546124899874-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-e">COUNT </span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560546124899874-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Sort rows using
+          <a href="https://www.sqlitetutorial.net/sqlite-order-by/">ORDER BY</a>
+          clause:
+        </p>
+        <div
+          id="crayon-5daa49f560547016573098"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT c1, c2
+FROM table_name
+ORDER BY c1 ASC [DESC], c2 ASC [DESC],...;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560547016573098-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560547016573098-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560547016573098-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560547016573098-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c2</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560547016573098-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560547016573098-3"
+                      >
+                        <span class="crayon-k">ORDER</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">BY</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ASC</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">[</span
+                        ><span class="crayon-k">DESC</span
+                        ><span class="crayon-sy">]</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c2</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">ASC</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">[</span
+                        ><span class="crayon-k">DESC</span
+                        ><span class="crayon-sy">]</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Group rows using
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-group-by/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GROUP BY</a
+          >
+          clause.
+        </p>
+        <div
+          id="crayon-5daa49f560549874562844"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT *
+FROM table_name
+GROUP BY c1, c2, ...;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560549874562844-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560549874562844-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560549874562844-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560549874562844-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560549874562844-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560549874562844-3"
+                      >
+                        <span class="crayon-k">GROUP</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">BY</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Filter group of rows using
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-having/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >HAVING</a
+          >
+          clause.
+        </p>
+        <div
+          id="crayon-5daa49f560553425759944"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT c1, aggregate(c2)
+FROM table_name
+GROUP BY c1
+HAVING condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560553425759944-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560553425759944-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560553425759944-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560553425759944-4"
+                        style="height: 18px;"
+                      >
+                        4
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560553425759944-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">aggregate</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">c2</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560553425759944-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560553425759944-3"
+                      >
+                        <span class="crayon-k">GROUP</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">BY</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560553425759944-4"
+                      >
+                        <span class="crayon-k">HAVING</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <h2>Changing Data</h2>
+        <p>
+          <a href="https://www.sqlitetutorial.net/sqlite-insert/"
+            >Insert a row into a table</a
+          >:
+        </p>
+        <div
+          id="crayon-5daa49f560555662017685"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+INSERT INTO table_name(column1,column2,...)
+VALUES(value_1,value_2,...);</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560555662017685-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560555662017685-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560555662017685-1"
+                      >
+                        <span class="crayon-k">INSERT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INTO</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-e">table_name</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">column1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">column2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560555662017685-2"
+                      >
+                        <span class="crayon-k">VALUES</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">value_1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">value_2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Insert multiple rows into a table in a single statement:</p>
+        <div
+          id="crayon-5daa49f560556368167102"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+INSERT INTO table_name(column1,column2,...)
+VALUES(value_1,value_2,...),
+      (value_1,value_2,...),
+      (value_1,value_2,...)...</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560556368167102-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560556368167102-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560556368167102-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560556368167102-4"
+                        style="height: 18px;"
+                      >
+                        4
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560556368167102-1"
+                      >
+                        <span class="crayon-k">INSERT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">INTO</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-e">table_name</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">column1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">column2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560556368167102-2"
+                      >
+                        <span class="crayon-k">VALUES</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">value_1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">value_2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560556368167102-3"
+                      >
+                        <span class="crayon-h"
+                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">value_1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">value_2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560556368167102-4"
+                      >
+                        <span class="crayon-h"
+                          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        ><span class="crayon-sy">(</span
+                        ><span class="crayon-i">value_1</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-i">value_2</span
+                        ><span class="crayon-sy">,</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">)</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          <a href="https://www.sqlitetutorial.net/sqlite-update/"
+            >Update all rows in a table</a
+          >:
+        </p>
+        <div
+          id="crayon-5daa49f560558032193870"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+UPDATE table_name
+SET c1 = v1,
+    ...</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560558032193870-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560558032193870-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560558032193870-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560558032193870-1"
+                      >
+                        <span class="crayon-k">UPDATE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560558032193870-2"
+                      >
+                        <span class="crayon-k">SET</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">=</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">v1</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560558032193870-3"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Update rows that match with a condition:</p>
+        <div
+          id="crayon-5daa49f56055a805732779"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+UPDATE table_name
+SET c1 = v1,
+    ...
+WHERE condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055a805732779-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055a805732779-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055a805732779-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055a805732779-4"
+                        style="height: 18px;"
+                      >
+                        4
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055a805732779-1"
+                      >
+                        <span class="crayon-k">UPDATE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">table_name</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055a805732779-2"
+                      >
+                        <span class="crayon-k">SET</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">c1</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">=</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">v1</span
+                        ><span class="crayon-sy">,</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055a805732779-3"
+                      >
+                        <span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span
+                        ><span class="crayon-sy">.</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055a805732779-4"
+                      >
+                        <span class="crayon-k">WHERE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-delete/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Delete all rows in a table</a
+          >
+        </p>
+        <div
+          id="crayon-5daa49f56055b988036002"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+DELETE FROM table;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055b988036002-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055b988036002-1"
+                      >
+                        <span class="crayon-k">DELETE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>Delete rows specified by a condition:</p>
+        <div
+          id="crayon-5daa49f56055d520301871"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+DELETE FROM table
+WHERE condition;</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055d520301871-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055d520301871-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055d520301871-1"
+                      >
+                        <span class="crayon-k">DELETE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055d520301871-2"
+                      >
+                        <span class="crayon-k">WHERE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-i">condition</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        <h2>Search</h2>
+        <p>
+          Search using
+          <a
+            href="https://www.sqlitetutorial.net/sqlite-like/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LIKE operator</a
+          >:
+        </p>
+        <div
+          id="crayon-5daa49f56055e984681618"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT * FROM table
+WHERE column LIKE '%value%'</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055e984681618-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f56055e984681618-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055e984681618-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f56055e984681618-2"
+                      >
+                        <span class="crayon-k">WHERE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">column</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k ">LIKE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-s">'%value%'</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p>
+          Search using
+          <a href="https://www.sqlitetutorial.net/sqlite-full-text-search/"
+            >full-text search</a
+          >:
+        </p>
+        <div
+          id="crayon-5daa49f560560573543837"
+          class="crayon-syntax crayon-theme-coy-copied crayon-font-liberation-mono crayon-os-pc print-yes notranslate crayon-wrapped"
+          data-settings=" minimize scroll-mouseover wrap"
+          style="margin-top: 12px; margin-bottom: 12px; font-size: 13px !important; line-height: 18px !important; height: auto;"
+        >
+          <div class="crayon-plain-wrap">
+            <textarea
+              class="crayon-plain print-no"
+              data-settings=""
+              readonly=""
+              style="tab-size: 4; font-size: 13px !important; line-height: 18px !important; z-index: 0; opacity: 0; overflow: hidden;"
+            >
+SELECT * 
+FROM table
+WHERE table MATCH 'search_query';</textarea
+            >
+          </div>
+          <div
+            class="crayon-main"
+            style="position: relative; z-index: 1; overflow: hidden;"
+          >
+            <table class="crayon-table" style="">
+              <tbody>
+                <tr class="crayon-row">
+                  <td class="crayon-nums " data-settings="show">
+                    <div
+                      class="crayon-nums-content"
+                      style="font-size: 13px !important; line-height: 18px !important;"
+                    >
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560560573543837-1"
+                        style="height: 18px;"
+                      >
+                        1
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560560573543837-2"
+                        style="height: 18px;"
+                      >
+                        2
+                      </div>
+                      <div
+                        class="crayon-num"
+                        data-line="crayon-5daa49f560560573543837-3"
+                        style="height: 18px;"
+                      >
+                        3
+                      </div>
+                    </div>
+                  </td>
+                  <td class="crayon-code">
+                    <div
+                      class="crayon-pre"
+                      style="font-size: 13px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"
+                    >
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560560573543837-1"
+                      >
+                        <span class="crayon-k">SELECT</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-o">*</span
+                        ><span class="crayon-h"> </span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560560573543837-2"
+                      >
+                        <span class="crayon-k">FROM</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span>
+                      </div>
+                      <div
+                        class="crayon-line"
+                        id="crayon-5daa49f560560573543837-3"
+                      >
+                        <span class="crayon-k">WHERE</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">table</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-k">MATCH</span
+                        ><span class="crayon-h"> </span
+                        ><span class="crayon-s">'search_query'</span
+                        ><span class="crayon-sy">;</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <p></p>
+        
+        
+    </main>
+
+    <hr>
+    <img
+      src="https://source.unsplash.com/featured/?bikini,water,snow"
+      alt="some nice image of the sea"
+    />
+    <footer>
+      <a href="https://greenido.wordpress.com/" target="_blank"
+        >@greenido 2019</a
+      >
+    </footer>
+  </body>
+</html>

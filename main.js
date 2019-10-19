@@ -64,6 +64,10 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
+app.get("/sqlite3.html", function(request, response) {
+  response.sendFile(__dirname + "/views/sqlite3.html");
+});
+
 //
 // endpoint to get all the stats in the database
 // read the sqlite3 module docs and try to add your own! https://www.npmjs.com/package/sqlite3
