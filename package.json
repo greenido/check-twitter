@@ -1,0 +1,27 @@
+{
+  "name": "twitter-stats",
+  "version": "0.1.1",
+  "author": "Ido Green | @greenido",
+  "description": "A node app to get stats from twitter with puppeteer ⛰",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "puppeteer": "^1.19.0",
+    "express": "^4.16.4",
+    "sqlite3": "^4.1.0"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "repository": {
+    "url": "todo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "youtube",
+    "express"
+  ]
+}
